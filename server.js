@@ -10,5 +10,6 @@ app.use(express.json());
 app.get('/api/health', (_, res) => res.json({ ok: true }));
 app.use('/api/xp', xpRoute);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
+console.log('PORT:', PORT); // Debug log
 app.listen(PORT, () => console.log('XP API running on port ' + PORT));
